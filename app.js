@@ -1,35 +1,16 @@
-function calculate() {
-  const num1 = parseFloat(document.getElementById("num1").value);
-  const num2 = parseFloat(document.getElementById("num2").value);
+let target = Math.floor(Math.random() * 100) + 1;
+let count = 0;
 
-  const operation = document.getElementById("operation").value;
+function playGame() {
+  let guess = parseInt(document.getElementById("mainInput").value);
+  count++;
 
-  let result;
-
-  if (isNaN(num1) || isNaN(num2)) {
-    result = "Enter a valid number";
+  if (guess < target) {
+    document.getElementById("feedback").innerText = "Too Low";
+  } else if (guess > target) {
+    document.getElementById("feedback").innerText = "Too High";
   } else {
-    switch (operation) {
-      case "add":
-        result = num1 + num2;
-        break;
-      case "subtract":
-        result = num1 - num2;
-        break;
-      case "multiply":
-        result = num1 * num2;
-        break;
-      case "divide":
-        if (num2 === 0) {
-          result = "Cannot divide by zero";
-        } else {
-          result = num1 / num2;
-        }
-        break;
-      default:
-        result = "Invalid Operator";
-    }
+    document.getElementById("feedback").innerText = "Correct!";
+    document.getElementById("attempts").innerText = "You guessed it in " + count + " attempts.";
   }
-
-  result = document.getElementById("result").innerText = "Result: " + result;
 }

@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
     <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h2>Guess the Number</h2>
 
-</head>
+    <input type="number" id="num" />
 
-<body>
+    <button onclick="playgame()">Guess</button>
 
-    <input type="number" placeholder="num1" id="num1">
-    <input type="number" placeholder="num2" id="num2">
-
-    <select name="" id="operation">
-        <option value="add">Add(+)</option>
-        <option value="subtract">Subtract(-)</option>
-        <option value="multiply">Multiply(*)</option>
-        <option value="divide">Divide(/)</option>
-    </select>
-
-    <button onclick="calculate()">Calculate</button>
-
-    <h2 id="result">Result:</h2>
-
+    <p id="feedback"></p>
+    <p id="attempt"></p>
 
     <script src="./app.js"></script>
-</body>
-
+  </body>
 </html>
-
