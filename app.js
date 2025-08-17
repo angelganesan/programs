@@ -1,43 +1,35 @@
- function calculate(){
-    const num1=parseFloat(document.getElementById("num1").value);
-    const num2=parseFloat(document.getElementById("num2").value);
-    const operation= document.getElementById("operation").value;
-    let result;
+function calculate() {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
 
-    if(isNaN(num1) || isNaN(num2)) {
-    result="Enter a valid number"
-    }
-else{
-    switch(operation){
-    //add
-    case "add":
-        result=num1+num2;
+  const operation = document.getElementById("operation").value;
+
+  let result;
+
+  if (isNaN(num1) || isNaN(num2)) {
+    result = "Enter a valid number";
+  } else {
+    switch (operation) {
+      case "add":
+        result = num1 + num2;
         break;
-
-        //subtraction
-     case "subtract":
-            result=num1-num2;
-            break;
-        //multiplication
-    case "multiplication":
-            result=num1*num2;
-            break; 
-            
-            //division
-    case "division":
-        if(num2===0){
-            result="cannot divided by zero"
-        }
-        else{
-            result=num1/num2;
-            
+      case "subtract":
+        result = num1 - num2;
+        break;
+      case "multiply":
+        result = num1 * num2;
+        break;
+      case "divide":
+        if (num2 === 0) {
+          result = "Cannot divide by zero";
+        } else {
+          result = num1 / num2;
         }
         break;
-    default :
-        result="Invalid operator";
+      default:
+        result = "Invalid Operator";
     }
+  }
+
+  result = document.getElementById("result").innerText = "Result: " + result;
 }
-
-result=document.getElementById("result").innerText="Result:"+result;
-
- }
